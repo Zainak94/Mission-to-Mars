@@ -10,13 +10,13 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
   </head>
-  <body style="background-color:rgb(124, 130, 184) ; color:rgb(54, 17, 88)">
+  <body style="background-color:rgb(221, 134, 75) ; color:rgba(48, 10, 3, 0.932)">
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        <p><a class="btn btn-primary btn-lg active" href="/scrape" role="button" style= "Arial Narrow Bold; background-color:firebrick ; border: black; border-style: solid;">Scrape New Data</a></p>
       </div>
 
       <!-- Add section for Mars News -->
@@ -35,6 +35,7 @@
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
+          
           <h2>Featured Mars Image</h2>
 
           <!-- if images is False/None/non-existent, then default to error message -->
@@ -47,7 +48,7 @@
 
         <div class="col-md-4">
           <!-- Mars Facts -->
-          <div class="row" id="mars-facts">
+          <div class="row" id="mars-facts" style="background-color: rgb(163, 105, 68);">
             <h4>Mars Facts</h4>
             {{ mars.facts | safe }}
           </div>
@@ -61,10 +62,10 @@
         </div>
 
         {% for hemisphere in mars.hemispheres %}
-        <div class="col-md-6">
+        <div class=".col-xs-12 .col-md-8>
           <div class="thumbnail">
-            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
-            <div class="caption">
+            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="Responsive image" class="img-responsive">
+            <div class="caption" style="text-align: center;">
               <h3>{{hemisphere.title}}</h3>
             </div>
           </div>
